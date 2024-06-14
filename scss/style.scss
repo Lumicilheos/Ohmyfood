@@ -1,4 +1,7 @@
+@import "variables";
+
 /****/
+
 * {
   box-sizing: border-box;
 }
@@ -6,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgba(246, 246, 246, 0.9647058824);
+  background: $primary;
 }
 
 header {
@@ -26,6 +29,8 @@ p {
   font-weight: 300;
 }
 
+// HEADER
+
 .logo {
   display: flex;
   height: 63px;
@@ -36,6 +41,8 @@ p {
   box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.1);
   padding-top: 20px;
 }
+
+// MAIN SECTION
 
 .main-section {
   display: flex;
@@ -66,7 +73,6 @@ p {
   padding-right: 50px;
   margin-top: 0;
 }
-
 .btn-container {
   display: flex;
   justify-content: center;
@@ -79,13 +85,15 @@ p {
   padding: 13px 20px;
   border-radius: 25px;
   margin-bottom: 57px;
-  background: linear-gradient(to bottom, #ff79da 0%, #9356dc 100%);
+  background: $btn-gradient;
   color: white;
   border: none;
   align-items: center;
   justify-content: center;
   font-size: 16px;
 }
+
+// Fonctionnement
 
 .section-fonctionnement h2 {
   display: inline;
@@ -123,15 +131,15 @@ p {
   width: 15px;
   font-size: 18px;
   padding: 10px;
-  background-color: #9356dc;
+  background-color: $color2;
   border-radius: 50%;
   color: white;
 }
+
+// Restaurant
 
 .restaurant {
   display: flex;
   flex-direction: column;
   padding: 15px;
 }
-
-/*# sourceMappingURL=style.css.map */
