@@ -17,7 +17,8 @@ header {
 
 h1,
 h2,
-h3 {
+h3,
+span {
   font-family: Roboto;
 }
 
@@ -87,70 +88,98 @@ p {
   font-size: 16px;
 }
 
+.title-h2 {
+  padding: 0;
+}
+
 .section-fonctionnement {
   background-color: white;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.btn-fonction {
-  left: 30px;
+  padding-right: 20px;
+  padding-left: 25px;
 }
 
 .section-fonctionnement i {
-  padding-left: 50px;
-  padding-right: 40px;
+  padding-right: 27px;
   font-size: 20px;
+  color: #7e7e7e;
+}
+
+.section-fonctionnement button:last-of-type i {
+  color: #9356dc;
+}
+
+.span-position {
+  height: 24px;
+  width: 24px;
+  background-color: #9356dc;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  right: 45px;
 }
 
 .section-fonctionnement span {
-  position: absolute;
-  height: 24px;
-  width: 24px;
   font-size: 18px;
-  background-color: #9356dc;
-  border-radius: 50%;
-}
-
-.title-h2 {
-  align-self: self-start;
-  margin-left: 30px;
+  white-space: nowrap;
+  font-weight: 600;
+  display: flex;
 }
 
 .section-fonctionnement button {
+  display: flex;
   padding: 35px;
   border-radius: 25px;
   border: none;
-  font-size: 16px;
-  white-space: nowrap;
-  font-weight: 600;
-  padding-right: 30px;
   margin-bottom: 25px;
-  width: 350px;
+  width: 100%;
+  align-items: center;
+  justify-items: flex-start;
+  height: 72px;
+  position: relative;
+}
+
+.restaurant {
+  padding-top: 25px;
+  background-color: rgba(246, 246, 246, 0.9647058824);
+  margin-bottom: 50px;
 }
 
 .restaurant h2 {
-  padding-left: 15px;
+  margin-left: 20px;
 }
 
 .card-restaurant {
   display: flex;
   flex-direction: column;
-  padding: 0 15px 0 15px;
+  margin: 0 15px 15px 15px;
+  position: relative;
+  background-color: white;
+  border-radius: 25px;
+  height: 320px;
 }
 
 .restaurant img {
   border-radius: 25px 25px 0 0;
+  object-fit: cover;
+  height: 230px;
 }
 
 .restaurant i {
   position: relative;
   display: flex;
   justify-content: end;
-  font-size: 40px;
+  font-size: 30px;
   bottom: 40px;
+  right: 20px;
+}
+.restaurant i:hover {
+  color: #9356dc;
 }
 
 .restaurant p {
@@ -169,19 +198,29 @@ p {
   margin-left: 10px;
 }
 
-.footer-end {
+.span-restaurant {
+  display: flex;
+  position: absolute;
+  color: #008766;
+  background-color: #99e2d0;
+  padding: 7px 9px;
+  right: 7%;
+  top: 5%;
+}
+
+footer {
   color: white;
   background-color: #353535;
   padding-left: 30px;
   padding-bottom: 20px;
 }
 
-.footer-end h3 {
+footer h3 {
   font-family: Shrikhand;
   padding-top: 20px;
 }
 
-.footer-end i {
+footer i {
   padding-right: 10px;
 }
 
