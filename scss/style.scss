@@ -45,10 +45,6 @@ p {
 
 // MAIN SECTION
 
-.main-section {
-  display: flex;
-}
-
 .form-location {
   display: flex;
   width: 100%;
@@ -92,12 +88,24 @@ p {
   align-items: center;
   justify-content: center;
   font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition-duration: 1s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    filter: brightness(130%);
+    transition-duration: 2s;
+  }
 }
+// Transition main-btn
 
 // Fonctionnement
 
 .title-h2 {
-  padding: 0;
+  background-color: white;
+  margin: 0;
+  padding: 48px 0 20px 20px;
 }
 
 .section-fonctionnement {
@@ -121,6 +129,12 @@ p {
 }
 // A VOIR
 
+.section-fonctionnement span {
+  font-size: 16px;
+  white-space: nowrap;
+  font-weight: 600;
+  display: flex;
+}
 .span-position {
   height: 24px;
   width: 24px;
@@ -133,13 +147,6 @@ p {
   align-items: center;
   justify-content: center;
   right: 45px;
-}
-
-.section-fonctionnement span {
-  font-size: 18px;
-  white-space: nowrap;
-  font-weight: 600;
-  display: flex;
 }
 
 .section-fonctionnement button {
@@ -162,7 +169,7 @@ p {
   margin-bottom: 50px;
 }
 
-.restaurant h2 {
+.title-restaurant {
   margin-left: 20px;
 }
 
@@ -190,9 +197,9 @@ p {
   bottom: 40px;
   right: 20px;
 
-  &:hover {
-    color: $color2;
-  }
+  // &:hover {
+  //   color: $color2;
+  // }
 }
 
 .restaurant p {
@@ -252,3 +259,72 @@ footer h3 {
 footer i {
   padding-right: 10px;
 }
+
+////////////////////////
+// Média quérie PC max 1440px
+
+// @media (min-width: 600px) and (max-width: 899px) ( a voir )
+
+@media (min-width: 900px) {
+  // *
+
+  // .main-page {
+  //   margin: 0 50px 0 50px;
+  // }
+
+  .main-title {
+    justify-content: center;
+    font-size: 40px;
+  }
+
+  // FONCTIONNEMENT
+
+  .section-fonctionnement {
+    flex-direction: row;
+    padding: 0 180px 0 180px;
+  }
+  .section-fonctionnement button {
+    margin-right: 25px;
+  }
+  .title-h2 {
+    padding-left: 180px;
+  }
+
+  // RESTAURANT
+
+  .title-restaurant {
+    padding-left: 160px;
+  }
+  section.restaurant {
+    padding: 0 160px 0 160px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 100px;
+    row-gap: 50px;
+  }
+
+  //footer
+
+  footer {
+    display: flex;
+    justify-content: end;
+    padding-top: 20px;
+  }
+
+  footer p {
+    margin-left: 20px;
+  }
+
+  footer h3 {
+    display: flex;
+    order: 1;
+    padding: 0;
+    margin: 12px 100px 0 100px;
+  }
+
+  footer p:nth-child(3) {
+    margin-right: 40px;
+  }
+}
+
+// PAGE RESTAURANT
