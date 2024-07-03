@@ -83,13 +83,12 @@ p {
   justify-content: center;
   font-size: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   cursor: pointer;
 }
 .main-btn:hover {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
   filter: brightness(130%);
-  transition-duration: 2s;
 }
 
 .title-h2 {
@@ -176,13 +175,30 @@ p {
   height: 230px;
 }
 
-.restaurant i {
-  position: relative;
-  display: flex;
-  justify-content: end;
+.restaurant .heart1 {
+  position: absolute;
   font-size: 30px;
   bottom: 40px;
   right: 20px;
+  opacity: 1;
+}
+.restaurant .heart1:hover {
+  opacity: 0;
+}
+
+.restaurant .heart2 {
+  position: absolute;
+  color: transparent;
+  font-size: 30px;
+  bottom: 40px;
+  right: 20px;
+  background-image: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
+  background-clip: text;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.restaurant .heart2:hover {
+  opacity: 1;
 }
 
 .restaurant p {

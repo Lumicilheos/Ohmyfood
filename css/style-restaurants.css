@@ -6,19 +6,16 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgba(246, 246, 246, 0.9647058824);
+  background-color: rgba(246, 246, 246, 0.9647058824);
 }
 
 h1,
 h2,
 h3,
-span {
-  font-family: Roboto;
-}
-
+h4,
+span,
 p {
-  font-family: roboto;
-  font-weight: 300;
+  font-family: Roboto;
 }
 
 header {
@@ -26,7 +23,8 @@ header {
   justify-content: center;
   align-items: center;
   padding-top: 25px;
-  position: relative;
+  padding-bottom: 20px;
+  background-color: rgba(246, 246, 246, 0.9647058824);
 }
 
 .arrow {
@@ -42,9 +40,61 @@ header {
 
 .img-menu {
   display: flex;
+  height: 275px;
   width: 100%;
-  height: 375px;
-  object-fit: contain;
+}
+
+.img-menu img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-h2 {
+  display: flex;
+  position: relative;
+  border-radius: 25px 25px 0 0;
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  bottom: 35px;
+  background-color: rgba(246, 246, 246, 0.9647058824);
+}
+
+h2 {
+  margin: 0;
+  padding-top: 30px;
+  font-size: 30px;
+  font-family: Shrikhand;
+}
+
+.heart1 {
+  position: absolute;
+  font-size: 30px;
+  bottom: 40px;
+  right: 20px;
+  opacity: 1;
+}
+.heart1:hover {
+  opacity: 0;
+}
+
+.heart2 {
+  position: absolute;
+  color: transparent;
+  font-size: 30px;
+  bottom: 40px;
+  right: 20px;
+  background-image: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
+  background-clip: text;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.heart2:hover {
+  opacity: 1;
+}
+
+.main {
+  padding: 0 15px 0 15px;
 }
 
 .btn-container {
@@ -66,13 +116,46 @@ header {
   justify-content: center;
   font-size: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   cursor: pointer;
 }
 .main-btn:hover {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
   filter: brightness(130%);
-  transition-duration: 2s;
+  transition-duration: 1s;
+}
+
+.card-animation {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.card-animation h4 {
+  margin: 10px 0 0 0;
+}
+.card-animation .card-content p {
+  margin: 10px 0 10px 0;
+  font-weight: 300;
+}
+.card-animation .card-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-weight: 700;
+  font-size: 16px;
+}
+.card-animation .card-price p {
+  margin: 0 10px 10px;
+}
+
+section.menu h3 {
+  border-bottom: 5px solid #99e2d0;
+  width: 10%;
+  padding-bottom: 10px;
 }
 
 footer {

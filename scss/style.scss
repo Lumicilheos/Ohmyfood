@@ -89,13 +89,12 @@ p {
   justify-content: center;
   font-size: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   cursor: pointer;
 
   &:hover {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
     filter: brightness(130%);
-    transition-duration: 2s;
   }
 }
 // Transition main-btn
@@ -189,17 +188,35 @@ p {
   height: 230px;
 }
 
-.restaurant i {
-  position: relative;
-  display: flex;
-  justify-content: end;
+// .restaurant i {
+//   transition: opacity 0.3s ease;
+// }
+
+.restaurant .heart1 {
+  position: absolute;
   font-size: 30px;
   bottom: 40px;
   right: 20px;
+  opacity: 1;
+  &:hover {
+    opacity: 0;
+  }
+}
 
-  // &:hover {
-  //   color: $color2;
-  // }
+.restaurant .heart2 {
+  position: absolute;
+  color: transparent;
+  font-size: 30px;
+  bottom: 40px;
+  right: 20px;
+  background-image: $btn-gradient2;
+  background-clip: text;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .restaurant p {
