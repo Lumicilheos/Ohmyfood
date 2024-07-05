@@ -6,7 +6,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgba(246, 246, 246, 0.9647058824);
+  background-color: #f6f6f6;
 }
 
 h1,
@@ -24,7 +24,7 @@ header {
   align-items: center;
   padding-top: 25px;
   padding-bottom: 20px;
-  background-color: rgba(246, 246, 246, 0.9647058824);
+  background-color: #f6f6f6;
 }
 
 .arrow {
@@ -56,8 +56,8 @@ header {
   text-align: center;
   height: 100px;
   width: 100%;
-  bottom: 35px;
-  background-color: rgba(246, 246, 246, 0.9647058824);
+  margin-top: -35px;
+  background-color: #f6f6f6;
 }
 
 h2 {
@@ -128,11 +128,16 @@ h2 {
 .card-animation {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-left: 15px;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  position: relative;
+}
+.card-animation:hover {
+  margin-right: 30px;
 }
 .card-animation h4 {
   margin: 10px 0 0 0;
@@ -144,18 +149,35 @@ h2 {
 .card-animation .card-price {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  align-self: flex-end;
   font-weight: 700;
   font-size: 16px;
 }
-.card-animation .card-price p {
+.card-animation .card-price span {
   margin: 0 10px 10px;
 }
 
-section.menu h3 {
+section.main h3 {
   border-bottom: 5px solid #99e2d0;
   width: 10%;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  font-weight: 300;
+}
+
+footer {
+  color: white;
+  background-color: #353535;
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+footer h3 {
+  font-family: Shrikhand;
+  padding-top: 20px;
+}
+
+footer i {
+  padding-right: 10px;
 }
 
 footer {
