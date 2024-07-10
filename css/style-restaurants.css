@@ -53,7 +53,6 @@ header {
   display: flex;
   position: relative;
   border-radius: 25px 25px 0 0;
-  text-align: center;
   height: 100px;
   width: 100%;
   margin-top: -35px;
@@ -61,7 +60,8 @@ header {
 }
 
 h2 {
-  margin: 0;
+  margin: 0 0 0 17px;
+  font-weight: 500;
   padding-top: 30px;
   font-size: 30px;
   font-family: Shrikhand;
@@ -70,8 +70,8 @@ h2 {
 .heart1 {
   position: absolute;
   font-size: 30px;
-  bottom: 40px;
-  right: 20px;
+  bottom: 35px;
+  right: 50px;
   opacity: 1;
 }
 .heart1:hover {
@@ -82,8 +82,8 @@ h2 {
   position: absolute;
   color: transparent;
   font-size: 30px;
-  bottom: 40px;
-  right: 20px;
+  bottom: 35px;
+  right: 50px;
   background-image: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
   background-clip: text;
   opacity: 0;
@@ -133,33 +133,63 @@ h2 {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
   position: relative;
+  margin: 0 5px 20px 5px;
+  width: auto;
+  transition: margin-right 0.3s ease;
 }
 .card-animation:hover {
-  margin-right: 30px;
+  margin-right: 59px;
 }
-.card-animation h4 {
-  margin: 10px 0 0 0;
+.card-animation .card-content {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
 }
+.card-animation .card-content h4,
 .card-animation .card-content p {
-  margin: 10px 0 10px 0;
-  font-weight: 300;
+  margin: 10px 0;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .card-animation .card-price {
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-self: flex-end;
   font-weight: 700;
   font-size: 16px;
 }
-.card-animation .card-price span {
-  margin: 0 10px 10px;
+.card-animation .card-price p {
+  padding-right: 10px;
+}
+
+.test {
+  height: 69px;
+  width: 380px;
+  margin-left: 5px;
+  background-color: #99e2d0;
+  position: absolute;
+  z-index: -1;
+  border-radius: 15px;
+}
+.test .check {
+  background-color: white;
+  color: #99e2d0;
+  position: relative;
+  left: 90%;
+  top: 33%;
+  border-radius: 75%;
+  padding: 4px;
+  height: 22px;
+  width: 22px;
 }
 
 section.main h3 {
   border-bottom: 5px solid #99e2d0;
-  width: 10%;
+  width: 40px;
   padding-bottom: 5px;
   font-weight: 300;
 }
@@ -194,6 +224,38 @@ footer h3 {
 
 footer i {
   padding-right: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-color: white;
+  }
+  .img-menu {
+    height: 383px;
+  }
+  .card-h2 {
+    justify-content: center;
+  }
+  .heart1,
+  .heart2 {
+    right: 30%;
+  }
+  .entrees,
+  .plats,
+  .dessert {
+    max-width: 634px;
+    margin: 0 auto;
+  }
+  .entrees .test,
+  .plats .test,
+  .dessert .test {
+    width: 624px;
+  }
+  .entrees .card-animation:hover,
+  .plats .card-animation:hover,
+  .dessert .card-animation:hover {
+    margin-right: 109px;
+  }
 }
 
 /*# sourceMappingURL=style-restaurants.css.map */
