@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixin";
 
 /****/
 
@@ -19,6 +20,19 @@ h4,
 span,
 p {
   font-family: Roboto;
+}
+// ANIMATION
+
+.entrees {
+  @include anime($initial-delay);
+}
+
+.plats {
+  @include anime($initial-delay + $delay-increment);
+}
+
+.dessert {
+  @include anime($initial-delay + 2 * $delay-increment);
 }
 
 // HEADER
@@ -92,9 +106,9 @@ h2 {
 .heart2 {
   position: absolute;
   color: transparent;
-  font-size: 30px;
-  bottom: 35px;
-  right: 50px;
+  font-size: 32px;
+  bottom: 34px;
+  right: 49px;
   background-image: $btn-gradient2;
   background-clip: text;
   opacity: 0;
@@ -192,7 +206,7 @@ h2 {
 
 .test {
   height: 69px;
-  width: 380px;
+  width: 385px;
   margin-left: 5px;
   background-color: $color3;
   position: absolute;
@@ -262,9 +276,10 @@ footer i {
     background-color: white;
   }
 
-  // .main {
-  //   width: 1055px;
-  // }
+  .main {
+    background-color: $primary;
+    margin-top: -20px;
+  }
 
   .img-menu {
     height: 383px;

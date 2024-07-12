@@ -1,3 +1,9 @@
+@keyframes anime {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /****/
 * {
   box-sizing: border-box;
@@ -16,6 +22,27 @@ h4,
 span,
 p {
   font-family: Roboto;
+}
+
+.entrees {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: anime 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.plats {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: anime 1s forwards;
+  animation-delay: 1.5s;
+}
+
+.dessert {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: anime 1s forwards;
+  animation-delay: 2.5s;
 }
 
 header {
@@ -81,9 +108,9 @@ h2 {
 .heart2 {
   position: absolute;
   color: transparent;
-  font-size: 30px;
-  bottom: 35px;
-  right: 50px;
+  font-size: 32px;
+  bottom: 34px;
+  right: 49px;
   background-image: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
   background-clip: text;
   opacity: 0;
@@ -168,7 +195,7 @@ h2 {
 
 .test {
   height: 69px;
-  width: 380px;
+  width: 385px;
   margin-left: 5px;
   background-color: #99e2d0;
   position: absolute;
@@ -229,6 +256,10 @@ footer i {
 @media only screen and (min-width: 768px) {
   body {
     background-color: white;
+  }
+  .main {
+    background-color: #f6f6f6;
+    margin-top: -20px;
   }
   .img-menu {
     height: 383px;

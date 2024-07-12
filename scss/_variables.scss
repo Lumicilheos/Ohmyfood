@@ -1,6 +1,5 @@
 $primary: #f6f6f6;
 
-// $btn-gradient: linear-gradient(to bottom, #ff79da 0%, #9356dc 100%);
 $color1: #ff79da;
 
 $color2: #9356dc;
@@ -11,3 +10,6 @@ $btn-gradient2: linear-gradient(to bottom, $color2 0%, $color1 100%);
 $color3: #99e2d0;
 
 $color4: #008766;
+
+$initial-delay: 0.5s;
+$delay-increment: 1s;
