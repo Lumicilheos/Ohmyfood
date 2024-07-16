@@ -1,14 +1,9 @@
-/****/
-* {
-  box-sizing: border-box;
+@keyframes anime {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #f6f6f6;
-}
-
 #loader {
   position: fixed;
   top: 0;
@@ -22,14 +17,15 @@ body {
   align-items: center;
   animation: fadeout 0.5s ease forwards 2s;
   pointer-events: none;
+  opacity: 0.5;
 }
 
 #loader::after {
   content: "";
   width: 50px;
   height: 50px;
-  border: 5px solid #999;
-  border-top: 5px solid #99e2d0;
+  border: 5px solid #99e2d0;
+  border-top: 5px solid #9356dc;
   border-radius: 50%;
   animation: spin 0.5s linear infinite;
 }
@@ -58,6 +54,17 @@ body {
 
 body.loaded #loader {
   display: none;
+}
+
+/****/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f6f6f6;
 }
 
 header {
@@ -106,6 +113,7 @@ p {
   padding-left: 60px;
   padding-right: 60px;
   text-align: center;
+  justify-content: center;
 }
 
 .main-p {
@@ -140,6 +148,7 @@ p {
 .main-btn:hover {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
   filter: brightness(130%);
+  transition-duration: 1s;
 }
 
 .title-h2 {
@@ -184,12 +193,12 @@ p {
   position: relative;
   align-items: center;
   justify-content: center;
-  right: 45px;
+  right: 15%;
 }
 
 .section-fonctionnement button {
   display: flex;
-  padding: 35px;
+  padding: 15px 10% 15px 10%;
   border-radius: 25px;
   border: none;
   margin-bottom: 25px;
@@ -198,26 +207,33 @@ p {
   justify-items: flex-start;
   height: 72px;
   position: relative;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-fonctionnement button:last-of-type {
+  margin-right: 0;
 }
 
 .restaurant {
-  padding-top: 25px;
   background-color: #f6f6f6;
   margin-bottom: 50px;
 }
-
-.title-restaurant {
-  margin-left: 20px;
-}
-
-.card-restaurant {
+.restaurant .card-restaurant {
   display: flex;
   flex-direction: column;
   margin: 0 15px 15px 15px;
   position: relative;
   background-color: white;
   border-radius: 25px;
-  height: 320px;
+}
+.restaurant .card-restaurant h3 {
+  margin-bottom: 0;
+}
+
+.title-restaurant {
+  padding-left: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .restaurant img {
@@ -229,7 +245,7 @@ p {
 .restaurant .heart1 {
   position: absolute;
   font-size: 29px;
-  bottom: 40px;
+  bottom: 25px;
   right: 20px;
   opacity: 1;
 }
@@ -241,7 +257,7 @@ p {
   position: absolute;
   color: transparent;
   font-size: 32px;
-  bottom: 39px;
+  bottom: 25px;
   right: 19px;
   background-image: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
   background-clip: text;
@@ -254,22 +270,17 @@ p {
 
 .restaurant p {
   margin: 0;
+  margin-bottom: 10px;
 }
 
 .restaurant a {
   text-decoration: none;
-}
-
-.restaurant h3 {
-  margin-bottom: 0;
+  color: black;
 }
 
 .restaurant-text {
   padding-left: 15px;
-}
-
-.text-content {
-  margin-left: 10px;
+  color: black;
 }
 
 .span-restaurant {
@@ -288,36 +299,49 @@ footer {
   padding-left: 30px;
   padding-bottom: 20px;
 }
-
 footer h3 {
   font-family: Shrikhand;
   padding-top: 20px;
+  font-weight: 300;
 }
-
 footer i {
   padding-right: 10px;
 }
 
 @media (min-width: 900px) {
   .main-title {
-    justify-content: center;
     font-size: 40px;
+  }
+  .main-page {
+    margin: 0 auto;
+  }
+  .main-btn {
+    margin-bottom: 25px;
+    margin-top: 15px;
   }
   .section-fonctionnement {
     flex-direction: row;
-    padding: 0 180px 0 180px;
+    padding-left: 165px;
+    padding-right: 165px;
+    padding-bottom: 30px;
+  }
+  .section-fonctionnement .span-position {
+    right: 12%;
   }
   .section-fonctionnement button {
-    margin-right: 25px;
+    margin-right: 4%;
+    padding: 0 2%;
+    width: 37%;
   }
   .title-h2 {
-    padding-left: 180px;
+    padding-left: 160px;
   }
   .title-restaurant {
     padding-left: 160px;
   }
   section.restaurant {
-    padding: 0 160px 0 160px;
+    width: 100%;
+    padding: 0 150px 0 150px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 100px;
@@ -327,6 +351,7 @@ footer i {
     display: flex;
     justify-content: end;
     padding-top: 20px;
+    margin-right: -50px;
   }
   footer p {
     margin-left: 20px;

@@ -21,7 +21,11 @@ span,
 p {
   font-family: Roboto;
 }
-// ANIMATION
+
+.arrow i {
+  color: black;
+}
+// ANIMATION- PLATS
 
 .entrees {
   @include anime($initial-delay);
@@ -76,6 +80,7 @@ header {
 .card-h2 {
   display: flex;
   position: relative;
+  align-items: center;
   border-radius: 25px 25px 0 0;
   height: 100px;
   width: 100%;
@@ -92,11 +97,19 @@ h2 {
   font-family: Shrikhand;
 }
 
+.heart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  margin: 5.5%;
+  top: 10%;
+}
+
 .heart1 {
   position: absolute;
   font-size: 30px;
-  bottom: 35px;
-  right: 50px;
   opacity: 1;
   &:hover {
     opacity: 0;
@@ -107,8 +120,7 @@ h2 {
   position: absolute;
   color: transparent;
   font-size: 33px;
-  bottom: 34px;
-  right: 50px;
+
   background-image: $btn-gradient2;
   background-clip: text;
   opacity: 0;
@@ -131,54 +143,33 @@ h2 {
 }
 
 .main-btn {
-  display: flex;
-  width: 218px;
-  height: 50px;
-  padding: 13px 20px;
-  border-radius: 25px;
-  margin-bottom: 57px;
-  background: $btn-gradient;
-  color: white;
-  border: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition-duration: 0.5s;
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-    filter: brightness(130%);
-    transition-duration: 1s;
-  }
+  @include btn-main;
 }
-
 // RESTAURANT
 
 .card-animation {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding-left: 15px;
   background-color: white;
-  border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  // margin-bottom: 20px;
-  position: relative;
   margin: 0 5px 20px 5px;
-  width: auto;
-  // width: 100%;
-  transition: margin-right 0.3s ease;
+  width: 100%;
+  border-radius: 15px;
+  transition: margin-right 0.5s ease;
 
   &:hover {
-    margin-right: 59px;
+    margin-right: 50px;
+
+    .test {
+      display: flex;
+    }
   }
 
   .card-content {
-    flex: 1;
     overflow: hidden;
     white-space: nowrap;
+    width: 100%;
 
     h4,
     p {
@@ -193,36 +184,33 @@ h2 {
   .card-price {
     flex-shrink: 0;
     display: flex;
-    flex-direction: column;
     align-self: flex-end;
     font-weight: 700;
     font-size: 16px;
 
     p {
       padding-right: 10px;
+      margin-bottom: 10px;
     }
   }
-}
-
-.test {
-  height: 69px;
-  width: 385px;
-  margin-left: 5px;
-  background-color: $color3;
-  position: absolute;
-  z-index: -1;
-  border-radius: 15px;
-
-  .check {
-    background-color: white;
-    color: $color3;
+  .test {
+    width: 80px;
+    height: 69px;
+    background-color: $color3;
+    border-radius: 0 15px 15px 0;
     position: relative;
-    left: 90%;
-    top: 33%;
-    border-radius: 75%;
-    padding: 4px;
-    height: 22px;
-    width: 22px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    .check {
+      background-color: white;
+      color: $color3;
+      border-radius: 75%;
+      padding: 4px;
+      height: 22px;
+      width: 22px;
+    }
   }
 }
 
@@ -237,62 +225,35 @@ section.main h3 {
 
 // FOOTER
 
-footer {
-  color: white;
-  background-color: #353535;
-  padding-left: 30px;
-  padding-bottom: 20px;
-}
+@include footer;
 
-footer h3 {
-  font-family: Shrikhand;
-  padding-top: 20px;
-}
+// ::::::::::
 
-footer i {
-  padding-right: 10px;
-}
-
-// FOOTER
-
-footer {
-  color: white;
-  background-color: #353535;
-  padding-left: 30px;
-  padding-bottom: 20px;
-}
-
-footer h3 {
-  font-family: Shrikhand;
-  padding-top: 20px;
-}
-
-footer i {
-  padding-right: 10px;
-}
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
   body {
     background-color: white;
   }
 
   .main {
     background-color: $primary;
-    margin-top: -20px;
+    max-width: 1045px;
+    margin: 0 auto;
+    padding: 0;
   }
 
   .img-menu {
     height: 383px;
-    // width: 1440px;
   }
 
   .card-h2 {
     justify-content: center;
   }
 
-  .heart1,
-  .heart2 {
+  .heart1 {
     right: 30%;
+  }
+  .heart2 {
+    right: 29.9%;
   }
 
   .entrees,
@@ -300,15 +261,38 @@ footer i {
   .dessert {
     max-width: 634px;
     margin: 0 auto;
-
-    .test {
-      width: 624px;
-    }
+    padding-bottom: 25px;
 
     .card-animation {
       &:hover {
-        margin-right: 109px;
+        margin-right: 50px;
       }
     }
+  }
+
+  .main-btn {
+    margin-bottom: 40px;
+  }
+  //  FOOTER HP
+  footer {
+    display: flex;
+    justify-content: end;
+    padding-top: 20px;
+    margin-right: -50px;
+  }
+
+  footer p {
+    margin-left: 20px;
+  }
+
+  footer h3 {
+    display: flex;
+    order: 1;
+    padding: 0;
+    margin: 12px 100px 0 100px;
+  }
+
+  footer p:nth-child(3) {
+    margin-right: 40px;
   }
 }

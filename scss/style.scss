@@ -1,4 +1,6 @@
 @import "variables";
+@import "mixin";
+@include loader;
 
 /****/
 
@@ -13,58 +15,6 @@ body {
 }
 
 //////// LOADER
-#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $color1;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeout 0.5s ease forwards 2s;
-  pointer-events: none;
-}
-
-#loader::after {
-  content: "";
-  width: 50px;
-  height: 50px;
-  border: 5px solid #999;
-  border-top: 5px solid $color3;
-  border-radius: 50%;
-  animation: spin 0.5s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fadeout {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.loader-text {
-  margin-top: 20px;
-  font-size: 24px;
-  color: black;
-}
-
-body.loaded #loader {
-  display: none;
-}
 
 // //////////////////////
 
@@ -118,6 +68,7 @@ p {
   padding-left: 60px;
   padding-right: 60px;
   text-align: center;
+  justify-content: center;
 }
 
 .main-p {
@@ -132,26 +83,7 @@ p {
 }
 
 .main-btn {
-  display: flex;
-  width: 218px;
-  height: 50px;
-  padding: 13px 20px;
-  border-radius: 25px;
-  margin-bottom: 57px;
-  background: $btn-gradient;
-  color: white;
-  border: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition-duration: 0.5s;
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-    filter: brightness(130%);
-  }
+  @include btn-main;
 }
 // Transition main-btn
 
@@ -201,12 +133,12 @@ p {
   position: relative;
   align-items: center;
   justify-content: center;
-  right: 45px;
+  right: 15%;
 }
 
 .section-fonctionnement button {
   display: flex;
-  padding: 35px;
+  padding: 15px 10% 15px 10%;
   border-radius: 25px;
   border: none;
   margin-bottom: 25px;
@@ -215,27 +147,36 @@ p {
   justify-items: flex-start;
   height: 72px;
   position: relative;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
+
+.section-fonctionnement button:last-of-type {
+  margin-right: 0;
+}
+
 // Restaurant
 
 .restaurant {
-  padding-top: 25px;
   background-color: $primary;
   margin-bottom: 50px;
-}
 
+  .card-restaurant {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px 15px 15px;
+    position: relative;
+    background-color: white;
+    border-radius: 25px;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+}
 .title-restaurant {
-  margin-left: 20px;
-}
-
-.card-restaurant {
-  display: flex;
-  flex-direction: column;
-  margin: 0 15px 15px 15px;
-  position: relative;
-  background-color: white;
-  border-radius: 25px;
-  height: 320px;
+  padding-left: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .restaurant img {
@@ -244,14 +185,10 @@ p {
   height: 230px;
 }
 
-// .restaurant i {
-//   transition: opacity 0.3s ease;
-// }
-
 .restaurant .heart1 {
   position: absolute;
   font-size: 29px;
-  bottom: 40px;
+  bottom: 25px;
   right: 20px;
   opacity: 1;
   &:hover {
@@ -263,7 +200,7 @@ p {
   position: absolute;
   color: transparent;
   font-size: 32px;
-  bottom: 39px;
+  bottom: 25px;
   right: 19px;
   background-image: $btn-gradient2;
   background-clip: text;
@@ -277,36 +214,18 @@ p {
 
 .restaurant p {
   margin: 0;
+  margin-bottom: 10px;
 }
 
 .restaurant a {
   text-decoration: none;
-}
-
-.restaurant h3 {
-  margin-bottom: 0;
+  color: black;
 }
 
 .restaurant-text {
   padding-left: 15px;
+  color: black;
 }
-
-// .card-content {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   align-items: flex-start;
-// }
-
-.text-content {
-  margin-left: 10px;
-}
-
-// .card-icon {
-//   display: flex;
-//   justify-content: flex-end;
-//   align-items: center;
-// }
 
 .span-restaurant {
   display: flex;
@@ -316,55 +235,50 @@ p {
   padding: 7px 9px;
   right: 7%;
   top: 5%;
-  // font-family: roboto;
 }
 
 // FOOTER
 
-footer {
-  color: white;
-  background-color: #353535;
-  padding-left: 30px;
-  padding-bottom: 20px;
-}
-
-footer h3 {
-  font-family: Shrikhand;
-  padding-top: 20px;
-}
-
-footer i {
-  padding-right: 10px;
-}
+@include footer;
 
 ////////////////////////
-// Média quérie PC max 1440px
 
-// @media (min-width: 600px) and (max-width: 899px) ( a voir )
-
+// Média quérie PC
 @media (min-width: 900px) {
-  // *
-
-  // .main-page {
-  //   margin: 0 50px 0 50px;
-  // }
-
   .main-title {
-    justify-content: center;
     font-size: 40px;
+  }
+
+  .main-page {
+    margin: 0 auto;
+  }
+
+  .main-btn {
+    margin-bottom: 25px;
+    margin-top: 15px;
   }
 
   // FONCTIONNEMENT
 
   .section-fonctionnement {
     flex-direction: row;
-    padding: 0 180px 0 180px;
+
+    padding-left: 165px;
+    padding-right: 165px;
+    padding-bottom: 30px;
+
+    .span-position {
+      right: 12%;
+    }
   }
   .section-fonctionnement button {
-    margin-right: 25px;
+    margin-right: 4%;
+    padding: 0 2%;
+    width: 37%;
   }
+
   .title-h2 {
-    padding-left: 180px;
+    padding-left: 160px;
   }
 
   // RESTAURANT
@@ -373,7 +287,8 @@ footer i {
     padding-left: 160px;
   }
   section.restaurant {
-    padding: 0 160px 0 160px;
+    width: 100%;
+    padding: 0 150px 0 150px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 100px;
@@ -386,6 +301,7 @@ footer i {
     display: flex;
     justify-content: end;
     padding-top: 20px;
+    margin-right: -50px;
   }
 
   footer p {
@@ -403,5 +319,3 @@ footer i {
     margin-right: 40px;
   }
 }
-
-// PAGE RESTAURANT
