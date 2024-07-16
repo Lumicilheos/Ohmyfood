@@ -4,6 +4,26 @@
     transform: translateY(0);
   }
 }
+@keyframes extendCheck {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 15%;
+  }
+}
+@keyframes retractCheck {
+  from {
+    opacity: 1;
+    width: 15%;
+  }
+  to {
+    opacity: 0;
+    width: 0;
+  }
+}
 #loader {
   position: fixed;
   top: 0;
@@ -354,7 +374,6 @@ footer i {
     display: flex;
     justify-content: end;
     padding-top: 20px;
-    margin-right: -50px;
   }
   footer p {
     margin-left: 20px;

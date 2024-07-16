@@ -14,8 +14,6 @@ body {
   background: $primary;
 }
 
-//////// LOADER
-
 // //////////////////////
 
 header {
@@ -89,7 +87,6 @@ p {
 .main-btn {
   @include btn-main;
 }
-// Transition main-btn
 
 // Fonctionnement
 
@@ -109,7 +106,6 @@ p {
 }
 
 .section-fonctionnement i {
-  // padding-left: 37px;
   padding-right: 27px;
   font-size: 20px;
   color: #7e7e7e;
@@ -305,7 +301,6 @@ p {
     display: flex;
     justify-content: end;
     padding-top: 20px;
-    margin-right: -50px;
   }
 
   footer p {

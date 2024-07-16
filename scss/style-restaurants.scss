@@ -156,15 +156,6 @@ h2 {
   margin: 0 5px 20px 5px;
   width: 100%;
   border-radius: 15px;
-  transition: margin-right 0.5s ease;
-
-  &:hover {
-    margin-right: 50px;
-
-    .test {
-      display: flex;
-    }
-  }
 
   .card-content {
     overflow: hidden;
@@ -193,27 +184,39 @@ h2 {
       margin-bottom: 10px;
     }
   }
-  .test {
-    width: 80px;
-    height: 69px;
-    background-color: $color3;
-    border-radius: 0 15px 15px 0;
-    position: relative;
-    display: none;
-    align-items: center;
-    justify-content: center;
 
-    .check {
-      background-color: white;
-      color: $color3;
-      border-radius: 75%;
-      padding: 4px;
-      height: 22px;
-      width: 22px;
-    }
+  .test {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 0;
+    opacity: 0;
+    height: 69px;
+    background-color: #ade8d9;
+    color: white;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    flex-shrink: 0;
+  }
+
+  .check {
+    background-color: white;
+    color: $color3;
+    border-radius: 75%;
+    padding: 4px;
+    height: 22px;
+    width: 22px;
+  }
+
+  &:hover .test {
+    animation: extendCheck 0.5s ease forwards;
+  }
+
+  &:not(:hover) .test {
+    animation: retractCheck 0.5s ease forwards;
   }
 }
-
 // test
 
 section.main h3 {
@@ -277,8 +280,7 @@ section.main h3 {
   footer {
     display: flex;
     justify-content: end;
-    padding-top: 20px;
-    margin-right: -50px;
+    padding-top: 60px;
   }
 
   footer p {
@@ -293,6 +295,6 @@ section.main h3 {
   }
 
   footer p:nth-child(3) {
-    margin-right: 40px;
+    margin-right: 35px;
   }
 }

@@ -4,6 +4,26 @@
     transform: translateY(0);
   }
 }
+@keyframes extendCheck {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 15%;
+  }
+}
+@keyframes retractCheck {
+  from {
+    opacity: 1;
+    width: 15%;
+  }
+  to {
+    opacity: 0;
+    width: 0;
+  }
+}
 /****/
 * {
   box-sizing: border-box;
@@ -172,13 +192,6 @@ h2 {
   margin: 0 5px 20px 5px;
   width: 100%;
   border-radius: 15px;
-  transition: margin-right 0.5s ease;
-}
-.card-animation:hover {
-  margin-right: 50px;
-}
-.card-animation:hover .test {
-  display: flex;
 }
 .card-animation .card-content {
   overflow: hidden;
@@ -205,22 +218,32 @@ h2 {
   margin-bottom: 10px;
 }
 .card-animation .test {
-  width: 80px;
-  height: 69px;
-  background-color: #99e2d0;
-  border-radius: 0 15px 15px 0;
-  position: relative;
-  display: none;
-  align-items: center;
+  text-align: center;
   justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 0;
+  opacity: 0;
+  height: 69px;
+  background-color: #ade8d9;
+  color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  flex-shrink: 0;
 }
-.card-animation .test .check {
+.card-animation .check {
   background-color: white;
   color: #99e2d0;
   border-radius: 75%;
   padding: 4px;
   height: 22px;
   width: 22px;
+}
+.card-animation:hover .test {
+  animation: extendCheck 0.5s ease forwards;
+}
+.card-animation:not(:hover) .test {
+  animation: retractCheck 0.5s ease forwards;
 }
 
 section.main h3 {
@@ -285,8 +308,7 @@ footer i {
   footer {
     display: flex;
     justify-content: end;
-    padding-top: 20px;
-    margin-right: -50px;
+    padding-top: 60px;
   }
   footer p {
     margin-left: 20px;
@@ -298,7 +320,7 @@ footer i {
     margin: 12px 100px 0 100px;
   }
   footer p:nth-child(3) {
-    margin-right: 40px;
+    margin-right: 35px;
   }
 }
 
