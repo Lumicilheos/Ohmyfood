@@ -265,33 +265,33 @@ p {
 
   .section-fonctionnement {
     flex-direction: row;
-
-    padding-left: 165px;
-    padding-right: 165px;
-    padding-bottom: 30px;
+    padding-right: 5px;
+    padding-left: 5%;
 
     .span-position {
-      right: 12%;
+      right: 10%;
     }
   }
   .section-fonctionnement button {
-    margin-right: 4%;
+    margin-right: 2.4%;
     padding: 0 2%;
-    width: 37%;
+    min-width: 260px;
+    width: 100%;
   }
 
   .title-h2 {
-    padding-left: 160px;
+    padding-left: 5%;
+    width: auto;
   }
 
   // RESTAURANT
 
   .title-restaurant {
-    padding-left: 160px;
+    padding-left: 4.9%;
   }
   section.restaurant {
     width: 100%;
-    padding: 0 150px 0 150px;
+    padding-left: 3.5%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 100px;
